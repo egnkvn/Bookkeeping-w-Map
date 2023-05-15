@@ -78,18 +78,6 @@ const Graph = ({ username }) => {
                 },
             }
         },
-        noData: {
-            text: " There is no record in this Month",
-            align: 'center',
-            verticalAlign: 'middle',
-            offsetX: 0,
-            offsetY: -200,
-            style: {
-                color: "red",
-                fontSize: '30px',
-                fontFamily: "sans-serif"
-            }
-        },
         legend: {
             position: 'bottom',
             fontSize: "20%"
@@ -105,15 +93,13 @@ const Graph = ({ username }) => {
             <TabPane tab="支出" key="支出">
                 <DatePicker size="large" value={Date} picker="month" onChange={(date) => { setDate(date) }} allowClear={false} />
                 <div className='pie'>
-                    {/*<Button  type='primary' onClick={()=>{HandleChange()}}> 確認 </Button>*/}
-                    <Chart options={options} type="pie" series={series} width="500" height='1000' />
+                    <Chart options={options} type="pie" series={series}/>
                 </div>
             </TabPane>
             <TabPane tab="收入" key="收入">
                 <DatePicker size="large" value={Date} picker="month" onChange={(date) => { setDate(date) }} allowClear={false} />
                 <div className='pie'>
-                    {/*<Button  type='primary' onClick={()=>{HandleChange()}}> 確認 </Button>*/}
-                    <Chart options={options} type='pie' series={series} width="500" height='1000' />
+                    <Chart options={options} type='pie' series={series}/>
                 </div>
             </TabPane>
         </Tabs>

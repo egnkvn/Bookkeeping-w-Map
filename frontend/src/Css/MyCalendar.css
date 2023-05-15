@@ -14,3 +14,37 @@
 .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled):before{
     background-color: #971d1d !important;
 }
+
+.calendertext{
+    font-size: 18px;
+}
+.total{
+    font-size: 20px;
+}
+
+@media (max-width: 920px) {
+    .calendertext{
+        font-size: 12px;
+    } 
+    .total{
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .calendertext{
+        font-size: 10px;
+    }
+    .total{
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .calendertext{
+        font-size: 8px;
+    }
+    .total{
+        font-size: 0px;
+    }
+}

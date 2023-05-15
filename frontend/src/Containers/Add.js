@@ -153,7 +153,7 @@ const Add = ({ username }) => {
                             onChange={(e) =>setAddress(e.target.value)}
                             /> </Title>
                         <Search
-                            placeholder="請輸入金額"
+                            placeholder="金額"
                             allowClear
                             enterButton="確認"
                             size="large"
