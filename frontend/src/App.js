@@ -98,7 +98,7 @@ function App() {
                 <NavLink to="/calendar" />
                 日曆
               </Menu.Item>
-              <Menu.Item
+              {/* <Menu.Item
                 key="3"
                 style={{ height: "60px", fontSize: "20px" }}
                 icon={<BarChartOutlined style={{ fontSize: "110%" }} />}
@@ -106,8 +106,8 @@ function App() {
               >
                 <NavLink to="/graph" />
                 圖表
-              </Menu.Item>
-              <Menu.Item
+              </Menu.Item> */}
+              {/* <Menu.Item
                 key="4"
                 style={{ height: "60px", fontSize: "20px" }}
                 icon={<DollarOutlined style={{ fontSize: "110%" }} />}
@@ -115,8 +115,8 @@ function App() {
               >
                 <NavLink to="/property" />
                 資產
-              </Menu.Item>
-              <Menu.Item
+              </Menu.Item> */}
+              {/* <Menu.Item
                 key="5"
                 style={{ height: "60px", fontSize: "20px" }}
                 icon={<EnvironmentOutlined style={{ fontSize: "110%" }} />}
@@ -124,7 +124,7 @@ function App() {
               >
                 <NavLink to="/map" />
                 地圖
-              </Menu.Item>
+              </Menu.Item> */}
               <Menu.Item
                 key="6"
                 style={{ height: "60px", fontSize: "20px" }}

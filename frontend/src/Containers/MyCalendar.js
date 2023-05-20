@@ -129,10 +129,6 @@ const MyCalendar = ({ username }) => {
         : curRecord.filter((x) => {
             return x.date === SelectDate && x.status === status;
           });
-    var total = 0;
-    for (let i = 0; i < arr.length; i++) {
-      total += arr[i].cost;
-    }
     return arr;
   }
 
@@ -165,7 +161,10 @@ const MyCalendar = ({ username }) => {
                 .filter((x) => {
                   return x.date === eachDate;
                 })
-                .reduce((sum, item) => sum + item.cost, 0)}
+                .reduce((sum, item) => {
+                  if (item.status === "收入") return sum + item.cost;
+                  else return sum - item.cost;
+                }, 0)}
         </p>
       </>
     );
@@ -222,7 +221,10 @@ const MyCalendar = ({ username }) => {
                 .filter((x) => {
                   return x.date_YM === eachMonth;
                 })
-                .reduce((sum, item) => sum + item.cost, 0)}
+                .reduce((sum, item) => {
+                  if (item.status === "收入") return sum + item.cost;
+                  else return sum - item.cost;
+                }, 0)}
         </Text>
       </>
     );

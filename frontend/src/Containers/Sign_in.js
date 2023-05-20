@@ -37,7 +37,7 @@ const NormalLoginForm = ({
       Login("true");
       setPassword("");
       setConfirmpassword("");
-      navigate("/calendar");
+      navigate("/calender");  //modify to Calender
     } else {
       message.error({
         content: Message,
