@@ -21,10 +21,12 @@ import {
   UnorderedListOutlined,
   ScheduleOutlined,
   ImportOutlined,
+  MenuOutlined,
 } from "@ant-design/icons";
 import "./Css/Menu.css";
 import Map from "./Containers/Map/Map";
 import "./App.css";
+import { colors } from "@mui/material";
 const { Header, Content, Footer, Sider } = Layout;
 const { SubMenu } = Menu;
 const { Title, Text } = Typography;
@@ -65,6 +67,16 @@ function App() {
   return login === "true" ? (
     <div>
       <Layout>
+        <div className="header">
+          <MenuOutlined
+            onClick={() => setSideropen(true)}
+            style={{ fontSize: "250%", color: "white", margin: "2px" }}
+          />
+          <Title style={{ fontSize: "200%", color: "white", margin: "20px" }}>
+            {username}
+          </Title>
+        </div>
+
         {sideropen && (
           <Sider
             className="sider"
@@ -98,7 +110,7 @@ function App() {
                 <NavLink to="/calendar" />
                 日曆
               </Menu.Item>
-              {/* <Menu.Item
+              <Menu.Item
                 key="3"
                 style={{ height: "60px", fontSize: "20px" }}
                 icon={<BarChartOutlined style={{ fontSize: "110%" }} />}
@@ -106,8 +118,8 @@ function App() {
               >
                 <NavLink to="/graph" />
                 圖表
-              </Menu.Item> */}
-              {/* <Menu.Item
+              </Menu.Item>
+              <Menu.Item
                 key="4"
                 style={{ height: "60px", fontSize: "20px" }}
                 icon={<DollarOutlined style={{ fontSize: "110%" }} />}
@@ -115,8 +127,8 @@ function App() {
               >
                 <NavLink to="/property" />
                 資產
-              </Menu.Item> */}
-              {/* <Menu.Item
+              </Menu.Item>
+              <Menu.Item
                 key="5"
                 style={{ height: "60px", fontSize: "20px" }}
                 icon={<EnvironmentOutlined style={{ fontSize: "110%" }} />}
@@ -124,7 +136,7 @@ function App() {
               >
                 <NavLink to="/map" />
                 地圖
-              </Menu.Item> */}
+              </Menu.Item>
               <Menu.Item
                 key="6"
                 style={{ height: "60px", fontSize: "20px" }}
@@ -146,19 +158,11 @@ function App() {
             </Menu>
           </Sider>
         )}
-        {!sideropen && (
-          <Button
-            type="primary"
-            onClick={() => setSideropen(true)}
-            style={{ position: "fixed", width: "100%", zIndex: 7777 }}
-          >
-            選單
-          </Button>
-        )}
         <Layout>
           <Content
             style={{
               margin: "24px 16px 0",
+              paddingTop: "25px",
               overflow: "initial",
               textAlign: "center",
             }}

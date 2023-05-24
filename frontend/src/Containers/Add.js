@@ -111,6 +111,22 @@ const Add = ({ username }) => {
     setIsModalVisible(false);
   };
 
+  const handleGetLocation = () => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const { latitude, longitude } = position.coords;
+          setAddress("Location," + latitude + "," + longitude);
+        },
+        (error) => {
+          console.error("Error getting current location:", error);
+        }
+      );
+    } else {
+      console.error("Geolocation is not supported by this browser.");
+    }
+  };
+
   const outcome = [
     "飲食",
     "交通",
@@ -188,7 +204,7 @@ const Add = ({ username }) => {
                 placeholder="備註"
                 allowClear
                 size="large"
-                style={{ width: "60%", marginTop: "20px" }}
+                style={{ width: "50%", marginTop: "20px" }}
                 value={Content}
                 onChange={(e) => setContent(e.target.value)}
               />
@@ -197,16 +213,20 @@ const Add = ({ username }) => {
                   placeholder="地址"
                   allowClear
                   size="large"
-                  style={{ width: "60%", marginTop: "20px" }}
+                  style={{ width: "50%", marginTop: "20px" }}
                   value={address}
                   onChange={(e) => setAddress(e.target.value)}
                 />{" "}
               </Title>
+              <Title level={4}>
+                <Button onClick={handleGetLocation}>使用當前位置</Button>
+              </Title>
+
               <Search
-                placeholder="金額"
+                placeholder="$"
                 allowClear
                 enterButton="確認"
-                size="large"
+                size="medium"
                 style={{ width: "50%", marginTop: "20px" }}
                 onSearch={handleCost}
               />

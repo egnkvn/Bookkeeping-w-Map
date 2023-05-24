@@ -138,7 +138,7 @@ const MyCalendar = ({ username }) => {
       <>
         <Text type="danger" strong={true} className="calendertext">
           {curRecord.filter((x) => {
-            return x.date === eachDate;
+            return x.date === eachDate && x.status === "支出";
           }).length === 0
             ? ""
             : "支出"}
@@ -146,7 +146,7 @@ const MyCalendar = ({ username }) => {
         <br></br>
         <Text type="success" strong={true} className="calendertext">
           {curRecord.filter((x) => {
-            return x.date === eachDate;
+            return x.date === eachDate && x.status === "收入";;
           }).length === 0
             ? ""
             : "收入"}
@@ -176,14 +176,14 @@ const MyCalendar = ({ username }) => {
       <>
         <Text type="danger" strong={true} className="calendertext">
           {curRecord.filter((x) => {
-            return x.date_YM === eachMonth;
+            return x.date_YM === eachMonth && x.status === "支出";;
           }).length === 0
             ? ""
             : "支出: "}
         </Text>
         <Text type="danger" strong={true} className="calendertext">
           {curRecord.filter((x) => {
-            return x.date_YM === eachMonth;
+            return x.date_YM === eachMonth && x.status === "支出";;
           }).length === 0
             ? ""
             : curRecord
@@ -195,14 +195,14 @@ const MyCalendar = ({ username }) => {
         <br></br>
         <Text type="success" strong={true} className="calendertext">
           {curRecord.filter((x) => {
-            return x.date_YM === eachMonth;
+            return x.date_YM === eachMonth && x.status === "收入";;
           }).length === 0
             ? ""
             : "收入: "}
         </Text>
         <Text type="success" strong={true} className="calendertext">
           {curRecord.filter((x) => {
-            return x.date_YM === eachMonth;
+            return x.date_YM === eachMonth && x.status === "收入";;
           }).length === 0
             ? ""
             : curRecord
