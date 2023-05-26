@@ -39,6 +39,10 @@
   border: 1px solid #971d1d !important;
 }
 
+.ant-message {
+  z-index: 9999; /* 調整為你想要的 z-index 值 */
+}
+
 .addspace {
   display: flex;
   justify-content: center;
@@ -49,4 +53,22 @@
   height: 75px;
   width: 75px;
   padding: 4px 4px;
+}
+
+.locationWrapper{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.mapWrapper{
+  width: 250px;
+  height: 250px;
+  position: fixed;
+  top: 300px;
+  right: 50px;
+}
+
+.ant-message {
+  z-index: 9999; /* 調整為你想要的 z-index 值 */
 }

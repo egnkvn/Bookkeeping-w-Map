@@ -1,3 +1,6 @@
 .loading {
     border-color: #971d1d;
 }
+.ant-message {
+    z-index: 9999; /* 調整為你想要的 z-index 值 */
+  }

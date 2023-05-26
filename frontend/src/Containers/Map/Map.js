@@ -86,7 +86,7 @@ const Map = ({ username }) => {
         }}
         allowClear={false}
       />
-      <div style={{ height: "90vh" }}>
+      <div style={{ height: "85vh", marginTop: "10px" }}>
         <MapGL
           ref={mapRef}
           {...viewport}

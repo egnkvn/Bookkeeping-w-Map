@@ -18,7 +18,9 @@
   box-shadow: 5px 5px 5px;
   background-color: rgb(22, 22, 22);
 }
-
+.ant-message {
+  z-index: 9999; /* 調整為你想要的 z-index 值 */
+}
 .login-form {
   max-width: 80%;
 }
@@ -60,64 +62,64 @@ h1 {
   font-weight: 100;
 }
 @media (max-width: 800px) {
-    .Layout {
-        height: 100vh;
-        display: flex;
-        align-content: center;
-        justify-content: center;
-      }
-      
-      .space {
-        display: flex;
-        flex-direction: column;
-        align-content: center;
-        justify-content: space-around;
-        width: 75%;
-        height: 400px;
-        position: relative;
-        top: 15%;
-        border-radius: 5%;
-        box-shadow: 5px 5px 5px;
-        background-color: rgb(22, 22, 22);
-      }
-      
-      .login-form {
-        max-width: 80%;
-      }
-      .login-form-forgot {
-        float: right;
-        color: azure;
-      }
-      .login-form-button {
-        width: 80%;
-        margin-left: 10%;
-        color: rgb(196, 101, 58);
-      }
-      
-      @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@500&display=swap");
-      .title {
-        font-size: 40px;
-        font-family: "Nunito", sans-serif;
-        color: azure;
-      }
-      .register {
-        color: azure;
-        width: 40%;
-        margin-top: 3%;
-        margin-left: 30%;
-      }
-      .registerinput {
-        margin-bottom: 5%;
-      }
-      @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,200&family=Nunito:wght@500&display=swap");
-      h1 {
-        position: relative;
-        text-align: center;
-        padding: 0;
-        margin: 0;
-        color: white;
-        text-shadow: 0.5px 0.5px 0.5px;
-        font-family: "Josefin Sans", Arial, Helvetica, sans-serif;
-        font-weight: 100;
-      }
+  .Layout {
+    height: 100vh;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+  }
+
+  .space {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: space-around;
+    width: 75%;
+    height: 400px;
+    position: relative;
+    top: 15%;
+    border-radius: 5%;
+    box-shadow: 5px 5px 5px;
+    background-color: rgb(22, 22, 22);
+  }
+
+  .login-form {
+    max-width: 80%;
+  }
+  .login-form-forgot {
+    float: right;
+    color: azure;
+  }
+  .login-form-button {
+    width: 80%;
+    margin-left: 10%;
+    color: rgb(196, 101, 58);
+  }
+
+  @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@500&display=swap");
+  .title {
+    font-size: 40px;
+    font-family: "Nunito", sans-serif;
+    color: azure;
+  }
+  .register {
+    color: azure;
+    width: 40%;
+    margin-top: 3%;
+    margin-left: 30%;
+  }
+  .registerinput {
+    margin-bottom: 5%;
+  }
+  @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,200&family=Nunito:wght@500&display=swap");
+  h1 {
+    position: relative;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    color: white;
+    text-shadow: 0.5px 0.5px 0.5px;
+    font-family: "Josefin Sans", Arial, Helvetica, sans-serif;
+    font-weight: 100;
+  }
 }

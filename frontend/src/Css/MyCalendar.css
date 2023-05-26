@@ -14,7 +14,9 @@
 .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled):before{
     background-color: #971d1d !important;
 }
-
+.ant-message {
+    z-index: 9999; /* 調整為你想要的 z-index 值 */
+  }
 .calendertext{
     font-size: 18px;
 }

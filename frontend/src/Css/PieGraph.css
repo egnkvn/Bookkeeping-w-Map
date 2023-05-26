@@ -4,6 +4,9 @@
   margin-left: 30%;
   margin-top: 5%;
 }
+.ant-message {
+  z-index: 9999; /* 調整為你想要的 z-index 值 */
+}
 @media (max-width: 920px) {
   .pie {
     width: 50%;

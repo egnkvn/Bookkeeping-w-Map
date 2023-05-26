@@ -30,13 +30,11 @@ function Pins(props) {
   Geocode.enableDebug();
   const Getcoordinate = (address) => {
     if (address.startsWith("Location,")) {
-      console.log("sdfghjk")
       const tempcoordinate = address.split(",");
       setCoordinate([Number(tempcoordinate[1]), Number(tempcoordinate[2])])
     } else {
       Geocode.fromAddress(address).then(
         (response) => {
-          console.log(response.results);
           const { lat, lng } = response.results[0].geometry.location;
           let tempcoordinate = [];
           tempcoordinate.push(lat);
