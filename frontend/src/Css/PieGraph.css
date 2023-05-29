@@ -5,7 +5,7 @@
   margin-top: 5%;
 }
 .ant-message {
-  z-index: 9999; /* 調整為你想要的 z-index 值 */
+  z-index: 9999;
 }
 @media (max-width: 920px) {
   .pie {
@@ -30,7 +30,7 @@
     height: 100%;
     margin-left: 1%;
   }
-} */
+}
 .ant-picker {
   border: 1px solid black !important;
 }

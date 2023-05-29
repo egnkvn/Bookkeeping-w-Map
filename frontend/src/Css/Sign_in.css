@@ -19,7 +19,7 @@
   background-color: rgb(22, 22, 22);
 }
 .ant-message {
-  z-index: 9999; /* 調整為你想要的 z-index 值 */
+  z-index: 9999;
 }
 .login-form {
   max-width: 80%;

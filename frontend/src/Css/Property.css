@@ -21,7 +21,7 @@
   justify-content: space-between;
 }
 .ant-message {
-  z-index: 9999; /* 調整為你想要的 z-index 值 */
+  z-index: 9999; 
 }
 @media (max-width: 768px) {
   .text {
