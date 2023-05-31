@@ -1,7 +1,7 @@
 .header {
   width: 100%;
   height: 7%;
-  z-index: 7777;
+  z-index: 100;
   position: fixed;
   background-color: #971d1d;
   display: flex;

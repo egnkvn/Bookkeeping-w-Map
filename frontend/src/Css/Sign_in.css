@@ -3,8 +3,13 @@
   display: flex;
   align-content: center;
   justify-content: center;
+  /* background: url('../Component/background.png'); */
 }
-
+.Layout img{
+  height: 100vh;
+  position: absolute;
+  opacity: 0.4;
+}
 .space {
   display: flex;
   flex-direction: column;

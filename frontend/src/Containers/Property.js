@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate, VictoryLabel } from "react-router-dom";
+import { VictoryPie, VictoryAnimation } from "victory";
 import {
   Tabs,
   Button,
@@ -17,7 +18,7 @@ import moment from "moment";
 const { Title, Text } = Typography;
 
 const Property = ({ username }) => {
-  const [Date, setDate] = useState(moment())
+  const [Date, setDate] = useState(moment());
   const [Total, setTotal] = useState(0);
   const [TotalIncome, setTotalIncome] = useState(0);
   const [TotalOutcome, setTotalOutcome] = useState(0);
@@ -45,13 +46,13 @@ const Property = ({ username }) => {
       let Status = Record[i].status;
       let cost = Record[i].cost;
       if (Status === "支出") {
-        tempTotal += cost;
+        tempTotal -= cost;
         if (Record[i].date_YM === Date.format("YYYY-MM")) {
           tempOutcome += cost;
           tempMonth -= cost;
         }
       } else if (Status === "收入") {
-        tempTotal -= cost;
+        tempTotal += cost;
         if (Record[i].date_YM === Date.format("YYYY-MM")) {
           tempIncome += cost;
           tempMonth += cost;
@@ -78,12 +79,14 @@ const Property = ({ username }) => {
   return (
     <>
       <div className="mainwrapper">
-        <div style={{marginBottom: '20px'}}>
+        <div style={{ marginBottom: "20px" }}>
           <DatePicker
             size="large"
             value={Date}
             picker="month"
-            onChange={(Date) => { setDate(Date) }}
+            onChange={(Date) => {
+              setDate(Date);
+            }}
             allowClear={false}
           />
         </div>
@@ -102,6 +105,33 @@ const Property = ({ username }) => {
                 </Title>
               </div>
               <Title level={4}>月支出</Title>
+              <div style={{ height: "100px", width: "100px" }}>
+                <VictoryPie
+                  animate={true}
+                  data={[
+                    {
+                      x: 1,
+                      y: TotalOutcome / (TotalOutcome + TotalIncome + 0.01),
+                    },
+                    {
+                      x: 2,
+                      y: 1 - TotalOutcome / (TotalOutcome + TotalIncome + 0.01),
+                    },
+                  ]}
+                  innerRadius={120}
+                  cornerRadius={25}
+                  labels={() => null}
+                  width={400} // 設定圖表寬度
+                  height={400}
+                  style={{
+                    data: {
+                      fill: ({ datum }) => {
+                        return datum.x === 1 ? "red" : "transparent";
+                      },
+                    },
+                  }}
+                />
+              </div>
             </div>
             <div>
               <div>
@@ -110,15 +140,68 @@ const Property = ({ username }) => {
                 </Title>
               </div>
               <Title level={4}>月收入</Title>
+              <div style={{ height: "100px", width: "100px" }}>
+                <VictoryPie
+                  animate={true}
+                  data={[
+                    {
+                      x: 1,
+                      y: TotalIncome / (TotalOutcome + TotalIncome + 0.01),
+                    },
+                    {
+                      x: 2,
+                      y: 1 - TotalIncome / (TotalOutcome + TotalIncome + 0.01),
+                    },
+                  ]}
+                  innerRadius={120}
+                  cornerRadius={25}
+                  labels={() => null}
+                  width={400} // 設定圖表寬度
+                  height={400}
+                  style={{
+                    data: {
+                      fill: ({ datum }) => {
+                        return datum.x === 1 ? "green" : "transparent";
+                      },
+                    },
+                  }}
+                />
+              </div>
             </div>
-            <div>
+            {/* <div>
               <div>
                 <Title level={4} type={handleColor(TotalMonth)}>
                   ${TotalMonth}
                 </Title>
               </div>
               <Title level={4}>月收支</Title>
-            </div>
+              <div style={{ height: "100px", width: "100px" }}>
+                <VictoryPie
+                  data={[
+                    { x: 1, y: 1 },
+                    {
+                      x: 2,
+                      y: 0,
+                    },
+                  ]}
+                  innerRadius={120}
+                  cornerRadius={25}
+                  labels={() => null}
+                  width={400} // 設定圖表寬度
+                  height={400}
+                  style={{
+                    data: {
+                      fill: ({ datum }) => {
+                        if (handleColor(TotalMonth) === "danger") return "red";
+                        if (handleColor(TotalMonth) === "success")
+                          return "green";
+                        return "transparent";
+                      },
+                    },
+                  }}
+                />
+              </div>
+            </div> */}
           </div>
         </div>
       </div>

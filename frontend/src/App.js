@@ -119,7 +119,7 @@ function App() {
                 <NavLink to="/graph" />
                 圖表
               </Menu.Item>
-              {/* <Menu.Item
+              <Menu.Item
                 key="4"
                 style={{ height: "60px", fontSize: "20px" }}
                 icon={<DollarOutlined style={{ fontSize: "110%" }} />}
@@ -127,7 +127,7 @@ function App() {
               >
                 <NavLink to="/property" />
                 資產
-              </Menu.Item> */}
+              </Menu.Item>
               <Menu.Item
                 key="5"
                 style={{ height: "60px", fontSize: "20px" }}

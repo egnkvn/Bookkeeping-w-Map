@@ -2,7 +2,7 @@ import React from "react";
 import "../Css/Sign_in.css";
 import { Form, Input, Button, Checkbox, Modal, message } from "antd";
 import { UserOutlined, LockOutlined } from "@ant-design/icons";
-import { Layout } from "antd";
+import background from "../Component/background.png"
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "../axios.js";
@@ -91,6 +91,7 @@ const NormalLoginForm = ({
   };
   return (
     <div className="Layout">
+      <img src={background} alt="map"/>
       <div className="space">
           <h1 className="title">Log in</h1>
           <Form
@@ -238,7 +239,6 @@ const NormalLoginForm = ({
               </Form.Item>
             </Form>
           </Modal>
-
       </div>
     </div>
   );
